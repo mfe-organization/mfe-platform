@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import './App.css'; // Подключаем стили
+import './App.css';
 
 const FrontendA = React.lazy(() => import('frontendA/App'));
 const FrontendB = React.lazy(() => import('frontendB/App'));
