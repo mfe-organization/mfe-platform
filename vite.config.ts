@@ -9,8 +9,8 @@ export default defineConfig({
     federation({
       name: "platform",
       remotes: {
-        frontendA: 'http://localhost:4173/assets/remoteEntry.js',
-        frontendB: 'http://localhost:4174/assets/remoteEntry.js',
+        frontendA: 'http://localhost:3002/assets/remoteEntry.js',
+        frontendB: 'http://localhost:3003/assets/remoteEntry.js',
       },
       shared: [
         "react",
