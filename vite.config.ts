@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         name: "platform",
         remotes: {
           frontendA: `${mode === "development" ? 'http://localhost:3002' : process.env.VITE_FRONTEND_A_URL}/assets/remoteEntry.js`,
-          frontendB: `${mode === "development" ? 'http://localhost:3002' : process.env.VITE_FRONTEND_B_URL}/assets/remoteEntry.js`,
+          frontendB: `${mode === "development" ? 'http://localhost:3003' : process.env.VITE_FRONTEND_B_URL}/assets/remoteEntry.js`,
         },
         shared: [
           "react",
