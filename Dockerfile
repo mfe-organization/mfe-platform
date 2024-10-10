@@ -12,7 +12,6 @@ FROM nginx:alpine
 
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 5144
+EXPOSE 3001
 
-# Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]

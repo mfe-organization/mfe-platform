@@ -5,9 +5,9 @@ import federation from '@originjs/vite-plugin-federation';
 export default defineConfig(({ mode }) => {
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
-  if (mode !== 'development' && (!process.env.VITE_FRONTEND_A_URL || !process.env.VITE_FRONTEND_B_URL)) {
-    throw new Error('VITE_FRONTEND_A_URL or VITE_FRONTEND_B_URL are not defined in the environment');
-  }
+  // if (mode !== 'development' && (!process.env.VITE_FRONTEND_A_URL || !process.env.VITE_FRONTEND_B_URL)) {
+  //   throw new Error('VITE_FRONTEND_A_URL or VITE_FRONTEND_B_URL are not defined in the environment');
+  // }
 
   return {
     plugins: [
