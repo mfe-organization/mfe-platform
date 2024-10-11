@@ -1,0 +1,41 @@
+services:
+  frontenda:
+    build:
+      context: '../microfrontend1'
+      dockerfile: 'Dockerfile'
+#    volumes:
+#      - './microfrontend1:/app'
+#      - '/app/node_modules'
+    ports:
+      - "3002:80"
+    environment:
+      - 'NODE_ENV=development'
+
+  frontendb:
+    build:
+      context: '../microfrontend2'
+      dockerfile: 'Dockerfile'
+#    volumes:
+#      - './microfrontend2:/app'
+#      - '/app/node_modules'
+    ports:
+      - "3003:80"
+    environment:
+      - 'NODE_ENV=development'
+
+  platform:
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+#    volumes:
+#      - '../platform:/app'
+#      - '/app/node_modules'
+    ports:
+      - "3001:3001"
+    environment:
+      - 'NODE_ENV=development'
+    command: 'npm run dev -- --host 0.0.0.0'
+    depends_on:
+      - 'frontenda'
+      - 'frontendb'
+
